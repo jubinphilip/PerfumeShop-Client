@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 
 export default function RootLayout({ children }) {
   const pathname=usePathname()
-  const showNavbar = pathname !== '/signin' && pathname !== '/signup' 
+  const showNavbar = pathname !== '/signin' && pathname !== '/' 
   return (
     <html lang="en">
       <body >

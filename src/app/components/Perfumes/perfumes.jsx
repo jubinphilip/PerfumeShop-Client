@@ -17,7 +17,7 @@ function Perfumes() {
         fetchData()
     },[])
 
-    async function handleClick(id)
+    async function handleClick(id,price)
     {
             console.log(id)
             const user=sessionStorage.getItem('userid')
@@ -26,6 +26,7 @@ function Perfumes() {
                 userid:user,
                 itemid:id,
                 count:1,
+                price:price
             }
             const url='http://localhost:9000/user/addtocart'
             const response=await axios.post(url,record)
@@ -67,7 +68,7 @@ function Perfumes() {
                                 <p className="sub-head-1">Cool Water Eau De Toilette for Men</p>
                                 <p className="price">$ {item.price}</p>
                        
-                                    <button className="buy-button" onClick={()=>handleClick(item._id)}>Add to Cart</button>
+                                    <button className="buy-button" onClick={()=>handleClick(item._id,item.price)}>Add to Cart</button>
                             </div>
                         </div>))}
                     </div>

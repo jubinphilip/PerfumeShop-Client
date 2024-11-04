@@ -11,7 +11,7 @@ function Cart() {
   let total=0
   for(let i=0;i<length;i++)
   {
-    total=Number(data[i].itemid.price)+total
+    total=Number(data[i].price)+total
   }
   const user=sessionStorage.getItem('userid')
   const router=useRouter()
@@ -75,7 +75,7 @@ function Cart() {
               <h3>{item.itemid.name}</h3>
             </div>
             <p>Cool Water Eau De Toilette for Men</p>
-            <p className="price">${item.itemid.price}</p>
+            <p className="price">${item.price}</p>
             <div className="pop">
               <p className="offer">
                 1 Offers Available

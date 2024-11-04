@@ -43,7 +43,7 @@ function Signin() {
                 <img src="/assets/img/eye.svg" alt="Show Password" className="eye-icon"/>
             </div>
        <button className="sign-up-button" onClick={handleSubmit}>Sign In</button>
-            <p className="sign-in-text">Dont't have an Account? <a href="/signup" className="sign-in-link">Sign Up</a></p>
+            <p className="sign-in-text">Dont't have an Account? <a href="/" className="sign-in-link">Sign Up</a></p>
         </div>
 
     </div>
