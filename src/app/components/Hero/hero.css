@@ -1,0 +1,15 @@
+.heroContainer {
+    padding: 20px 100px;
+  }
+.explore-block {
+    margin-top: 20px;
+  }
+  
+  .image-container {
+    position: relative;
+  }
+  
+  .full-width-image {
+    width: 100%;
+    height: auto;
+  }

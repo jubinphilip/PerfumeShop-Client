@@ -1,0 +1,107 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full height of the viewport */
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  }
+  
+  .background-image {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background: url(/assets/img/background.png);
+    background-repeat: round;
+  }
+  
+  .card {
+    width: 550px;
+    overflow: hidden;
+    height: 650px;
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
+    position: relative; /* Position relative for absolute positioning of the close icon */
+  }
+  
+  .close-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px; /* Position the close icon in the top right corner */
+    cursor: pointer; /* Change cursor on hover */
+  }
+  
+  .heading {
+    font-size: 32px;
+    font-weight: bold;
+    margin-top: 60px;
+    margin-bottom: 20px; /* Space below heading */
+    color: #333333;
+  }
+  
+  .input-field {
+    height: 56px;
+    width: 95%;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 0 12px; /* Padding for input */
+    margin-bottom: 20px; /* Space between input fields */
+  }
+  .error
+  {
+    color: red;
+  }
+  .password-field {
+    position: relative; /* Position relative for absolute positioning of the eye icon */
+  }
+  
+  .eye-icon {
+    position: absolute;
+    right: 12px; /* Position the eye icon inside the password field */
+    top: 14px; /* Center vertically in the input field */
+    cursor: pointer; /* Change cursor on hover */
+  }
+  
+  .sign-up-button {
+    height: 56px;
+    width: 100%;
+    background-color: #111111;
+    color: white;
+    border: none;
+    font-size: 18px;
+    border-radius: 50px;
+    cursor: pointer; /* Change cursor on hover */
+    margin-top: 40px; /* Space above button */
+    margin-bottom: 40px;
+  }
+  
+  .sign-in-text {
+    text-align: center; /* Center the sign-in text */
+    margin-top: 20px; /* Space above sign-in text */
+  }
+  
+  .sign-in-link {
+    color: #111111; /* Link color */
+    text-decoration: underline; /* Remove underline */
+    font-weight: bold;
+  }
+  
+  .sign-in-link:hover {
+    text-decoration: underline; /* Underline on hover */
+  }
+  
+  .input-feild-wrapper {
+    margin-top: 50px;
+  }
+  
+  .in-name {
+    color: #666666;
+    font-size: 16px;
+  }
+  

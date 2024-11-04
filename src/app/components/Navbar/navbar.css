@@ -1,0 +1,124 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Top Banner */
+.top-banner {
+  width: 100%;
+  background-color: #000;
+  color: #fff;
+  padding: 5px 0;
+  text-align: center;
+  font-size: 14px;
+  position: relative;
+}
+
+.top-banner a {
+  color: #fff;
+  text-decoration: underline;
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+.close-banner {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between; */
+  padding: 10px 90px;
+}
+
+.logo {
+  font-size: 2.8em;
+  font-family: "pattaya";
+  /* position: relative; */
+  left: 81px;
+  font-weight: 500;
+}
+.nav-links {
+  display: flex;
+  gap: 20px;
+  list-style-type: none;
+  /* position: relative; */
+  right: 100px;
+  top: 3px;
+  margin-left: 40px;
+  margin-right: 200px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+  font-family: poppins;
+  font-weight: 400;
+}
+
+.nav-links a:hover {
+  color: #000;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: #f5f5f5;
+  padding: 5px 10px;
+  border-radius: 20px;
+  flex-grow: 1;
+  /* max-width: 360px; */
+  height: 44px;
+  margin: 0 20px;
+}
+
+.search-bar input {
+  border: none;
+  background: none;
+  outline: none;
+  flex-grow: 1;
+  padding: 10px 25px;
+  font-size: 1em;
+}
+
+.search-icon {
+  color: #aaa;
+  /* position: absolute; */
+  font-size: 1.2em;
+}
+
+.icons {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  /* position: relative; */
+  right: 180px;
+}
+.icon {
+  position: relative;
+  font-size: 1.5em;
+  color: #333;
+}
+
+.icon .badge {
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  background-color: red;
+  color: #fff;
+  border-radius: 50%;
+  padding: 3px 6px;
+  font-size: 0.5em;
+}
+
