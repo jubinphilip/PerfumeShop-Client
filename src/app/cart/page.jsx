@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation'
 function Cart() {
   const[data,setData]=useState([])
   const[quantity,setQuantity]=useState(1)
+  const[message,setMessage]=useState([])
   const[rate,setRate]=useState('')
   const length=data?data.length:''
   let total=0
@@ -26,7 +27,9 @@ function Cart() {
       const response=await axios.get(url)
       setData(response.data.data)
       setRate(response.data.pricedetails)
-      console.log(response.data.pricedetails)
+      setMessage(response.data.pricedetails.messages)
+      console.log(response.data.pricedetails.messages)
+      console.log(message)
   }
   useEffect(()=>
   {
@@ -126,25 +129,13 @@ function Cart() {
         <span className="discount">${rate?.discount}</span>
       </div>
       <div className="pop">
-        <p className="offers-applied" >3 offers Applied <span className="info-icon">i</span></p>
-        <div id="offersModal" className="modal">
-          <div className="modal-content">
-            <span className="close">&times;</span>
-            <h4>5 Offers Applied</h4>
-            <ul>
-              <li><strong>Buy 1 Get 1 <span className="free-label">Free</span></strong></li>
-              <li>Buy 3 or More & Pay Just <strong>$75 Each!</strong></li>
-              <li>Special Combo: Buy Cool Water + Calvin Klein & Get <strong>$10 Off</strong> on Calvin Klein</li>
-              <li>Limited Time Only: <strong>15% Off</strong> When You Buy in the Next 2 Days</li>
-              <li>Gucci Deal: Save More When You Buy More! Buy 2 units for <strong>10% off</strong>, or 4+ units for
-                <strong>20% off</strong>.</li>
-            </ul>
-            <div className="total-discount">
-              <span>Total Discount</span>
-              <span className="discount-amount">- $345</span>
+        <p className="offers-applied" >offers Applied <span className="info-icon">i</span></p>
+        {message?.map((msg,index)=>
+        (
+          <div key={index}>
+            <p className='offer-messages'>{msg}</p>
             </div>
-          </div>
-        </div>
+        ))}
       </div>
       <div className="summary-item total">
         <span>Total</span>

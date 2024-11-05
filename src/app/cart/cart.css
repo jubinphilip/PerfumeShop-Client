@@ -38,6 +38,10 @@
     align-items: flex-end;
     border-bottom: 1px solid #0000001f;
   }
+
+  .offer-messages{
+    color: green;
+  }
   
   /* Product List */
   .product-list {
