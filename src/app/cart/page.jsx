@@ -36,11 +36,20 @@ function Cart() {
   async function handleDelete(id)
   {
     const url=`http://localhost:9000/user/deleteOrder/${id}`
- 
     const response=await axios.post(url)
     fetchData()
   }
 
+  async function handleSubmit()
+  {
+    const user=sessionStorage.getItem('userid')
+    const data={
+        user,
+        amount:rate.payable,
+    }
+    const url='http://localhost:9000/user/addbooking'
+    await axios.post(url,data)
+  }
 
   async function handleCount(id,operation) {
         const managecount={
@@ -144,7 +153,7 @@ function Cart() {
       <p className="congrats-message">
         Congratulations! You've Saved {rate?.discount} today!
       </p>
-      <button className="checkout-btn">Go to Checkout</button>
+      <button className="checkout-btn" onClick={handleSubmit}>Go to Checkout</button>
     </div>
   </div>
     </div>
