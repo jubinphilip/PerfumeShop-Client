@@ -25,7 +25,7 @@ function Cart() {
       const url=`http://localhost:9000/user/getorders/${user}`
       const response=await axios.get(url)
       setData(response.data.data)
-      setRate(response.pricedetails)
+      setRate(response.data.pricedetails)
       console.log(response.data.pricedetails)
   }
   useEffect(()=>
@@ -77,10 +77,13 @@ function Cart() {
             <p>Cool Water Eau De Toilette for Men</p>
             <p className="price">${item.price}</p>
             <div className="pop">
-              <p className="offer">
-                1 Offers Available
-                <span className="offer-image"><img src="/assets/icons/iemo.png" alt="" /></span>
-              </p>
+            {item?.itemid?.offers?.map((offer,index)=>(
+                    <p className="offer" key={index}>
+                    {offer}
+                    <span className="offer-image"><img src="/assets/icons/iemo.png" alt="" /></span>
+                  </p>
+            ))
+                 }
               <div className="offer-popup" id="Popup">
                 <p><strong>Offers Applied</strong></p>
                 <p>Buy 1 Get 1 Free</p>
@@ -107,11 +110,11 @@ function Cart() {
       <h3>Order Details</h3>
       <div className="summary-item">
         <span>Bag total</span>
-        <span>${total}</span>
+        <span>${rate?.total}</span>
       </div>
       <div className="summary-item">
         <span>Discount</span>
-        <span className="discount">- $450</span>
+        <span className="discount">${rate?.discount}</span>
       </div>
       <div className="pop">
         <p className="offers-applied" >3 offers Applied <span className="info-icon">i</span></p>
@@ -136,10 +139,10 @@ function Cart() {
       </div>
       <div className="summary-item total">
         <span>Total</span>
-        <span>$940</span>
+        <span>${rate?.payable}</span>
       </div>
       <p className="congrats-message">
-        Congratulations! You've Saved $450 today!
+        Congratulations! You've Saved {rate?.discount} today!
       </p>
       <button className="checkout-btn">Go to Checkout</button>
     </div>
