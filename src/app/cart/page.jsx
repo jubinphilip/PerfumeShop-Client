@@ -40,12 +40,18 @@ function Cart() {
 
   async function handleDelete(id)
   {
-    const url=`http://localhost:9000/user/deleteOrder/${id}`
-    const response=await axios.post(url,{
-      headers: { Authorization: `Bearer ${token}` },
-    })
- 
-    fetchData()
+    try {
+      const url=`http://localhost:9000/user/deleteOrder/${id}`
+      const response=await axios.post(url,{},{
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      console.log(response)
+      fetchData() 
+    } catch (error) {
+      console.log(error)
+    }
+
+
   }
 
   async function handleSubmit()

@@ -37,7 +37,7 @@ function Perfumes() {
             const response=await axios.post(url,record,{
                 headers: { Authorization: `Bearer ${token}` },
               })
-
+              console.log(response)
     }
   return (
  
