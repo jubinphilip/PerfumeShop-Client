@@ -20,12 +20,12 @@ function Navbar() {
             <div className="icons">
                 <div className="icon wishlist">
                     <span><img src="/assets/icons/Vector.png" alt=""/></span>
-                    <span className="badge">2</span>
+             
                 </div>
               <Link href={'/cart'}>
                     <div className="icon cart">
                         <span><img src="/assets/icons/Cart1.png" alt=""/></span>
-                        <span className="badge">4</span>
+                      
                     </div>
                     </Link>
                 <div className="icon profile">

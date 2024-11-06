@@ -24,7 +24,9 @@ function Cart() {
   async function fetchData()
   {
       const url=`http://localhost:9000/user/getorders/${user}`
-      const response=await axios.get(url)
+      const response=await axios.get(url,{
+        headers: { Authorization: `Bearer ${token}` },
+      })
       setData(response.data.data)
       setRate(response.data.pricedetails)
       setMessage(response.data.pricedetails.messages)
@@ -39,7 +41,10 @@ function Cart() {
   async function handleDelete(id)
   {
     const url=`http://localhost:9000/user/deleteOrder/${id}`
-    const response=await axios.post(url)
+    const response=await axios.post(url,{
+      headers: { Authorization: `Bearer ${token}` },
+    })
+ 
     fetchData()
   }
 
@@ -51,7 +56,9 @@ function Cart() {
         amount:rate.payable,
     }
     const url='http://localhost:9000/user/addbooking'
-    await axios.post(url,data)
+    await axios.post(url,data,{
+      headers: { Authorization: `Bearer ${token}` },
+    })
   }
 
   async function handleCount(id,operation) {

@@ -16,7 +16,12 @@ function Perfumes() {
         }
         fetchData()
     },[])
-
+    
+    const token=sessionStorage.getItem('token')
+    if(!token)
+    {
+      router.push('/signin')
+    }
     async function handleClick(id,price)
     {
             console.log(id)
@@ -29,7 +34,9 @@ function Perfumes() {
                 price:price
             }
             const url='http://localhost:9000/user/addtocart'
-            const response=await axios.post(url,record)
+            const response=await axios.post(url,record,{
+                headers: { Authorization: `Bearer ${token}` },
+              })
 
     }
   return (
